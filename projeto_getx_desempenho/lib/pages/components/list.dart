@@ -24,7 +24,7 @@ class ItemList extends StatelessWidget {
         },
       );
 
-      Desempenho.mostrarDesempenho();
+      Desempenho.salvarDesempenho();
 
       return list;
     });
