@@ -1,19 +1,18 @@
 import 'dart:ui';
-
-import 'citacao.dart';
+import 'estado.dart';
 
 class ItemModel{
   Color corCartao;
   Color corTextoAutor;
   Color corTextoFrase;
   Color corBorda;
-  Citacao citacao;
+  Estado estado;
 
   ItemModel({
     required this.corCartao,
     required this.corTextoAutor,
     required this.corTextoFrase,
     required this.corBorda,
-    required this.citacao
+    required this.estado
   });
 }

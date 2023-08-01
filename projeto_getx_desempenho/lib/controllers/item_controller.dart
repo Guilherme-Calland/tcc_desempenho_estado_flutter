@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:projeto_getx_desempenho/data/dados.dart';
-import 'package:projeto_getx_desempenho/model/citacao.dart';
+import 'package:projeto_getx_desempenho/model/estado.dart';
 import 'package:projeto_getx_desempenho/model/item.dart';
 import 'package:projeto_getx_desempenho/utils/performance.dart';
 
@@ -20,8 +20,8 @@ class ItemController extends GetxController{
   int randomize(int num) => Random().nextInt(num);
 
   ItemModel createRandom(){
-    int citacaoRand = Random().nextInt(Dados.citacoes.length);
-    Citacao citacao = Citacao.fromJson(Dados.citacoes[citacaoRand]);
+    int index = Random().nextInt(Dados.estados.length);
+    Estado estado = Estado.fromJson(Dados.estados[index]);
     int maxCardCol = 100;
     int cardR = randomize(maxCardCol); 
     int cardG = randomize(maxCardCol);
@@ -47,7 +47,7 @@ class ItemController extends GetxController{
       corTextoAutor: corTextoAutor,
       corTextoFrase: corTextoFrase,
       corBorda: corBorda,
-      citacao: citacao,
+      estado: estado,
     );
     return item;
 

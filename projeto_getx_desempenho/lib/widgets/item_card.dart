@@ -19,9 +19,27 @@ class ItemCard extends StatelessWidget {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(item.citacao.autor ?? '', style: TextStyle(color: item.corTextoAutor, fontSize: 18, fontWeight: FontWeight.bold),),
+            Text(item.estado.nome, style: TextStyle(color: item.corTextoAutor, fontSize: 24, fontWeight: FontWeight.bold),),
             SizedBox(height: 8,),
-            Text(item.citacao.frase ?? '', style: TextStyle(color: item.corTextoFrase, fontSize: 12),)
+            Text(
+            'Cidades: ',
+            style: TextStyle(
+              color: item.corTextoFrase,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+            Text((){
+              String texto = '';
+              List<String> cidades = item.estado.cidades; 
+              for(int i = 0; i < cidades.length; i++){
+                texto += cidades[i];
+                if(i < cidades.length - 1){
+                  texto += ', ';
+                }
+              }
+              return texto;
+            }(), style: TextStyle(color: item.corTextoFrase, fontSize: 12,), overflow: TextOverflow.ellipsis,maxLines: 6,),
           ],
         ),
     );
