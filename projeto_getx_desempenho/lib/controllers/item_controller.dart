@@ -73,8 +73,8 @@ class ItemController extends GetxController{
       count = 0;
       return;
     }
+    Desempenho.salvarTempo('Média desempenho atualizando 1');
     itemList[count] = itemList.cast<ItemModel>()[count]..estado.nome += ' (editado)';
     count++;
-    
   }
 }

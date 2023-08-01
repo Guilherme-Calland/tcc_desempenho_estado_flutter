@@ -12,20 +12,14 @@ class UpdateBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () async{
-        bool finished = false;
-        if(Desempenho.listaDesempenhos.length < Desempenho.repeticoes){
-          return;
-        }
-
-        do{
-          _itemController.updateOne();
-          await Future.delayed(Duration(milliseconds: 100));
-          if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
-            finished = true;
-            Desempenho.listaDesempenhos.clear();
-          }
-        }while(!finished);
+      onTap: (){
+        _itemController.updateOne();
+      },
+      onLongPress: ()async{
+        // for(int i = 0; i < _itemController.itemList.length; i ++){
+        //   await Future.delayed(Duration(milliseconds: 100));
+        //   _itemController.updateOne();
+        // }
       },
       color: editColor,
       icon: Icons.edit,

@@ -8,13 +8,16 @@ import '../../../styles.dart';
 import '../../../widgets/my_btn.dart';
 
 class CreateBtn extends StatelessWidget {
-  
+
   final _itemController = Get.find<ItemController>();
 
   @override
   Widget build(BuildContext context) {
     return MyButton(
       onTap: () async{
+        _itemController.createOne();
+      },
+      onLongPress: ()async{
         bool finished = false;
         do{
           _itemController.createOne();
