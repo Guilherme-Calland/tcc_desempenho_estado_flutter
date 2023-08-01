@@ -20,14 +20,14 @@ class Desempenho{
       int tempoAgora = int.parse(nowTxt);
       int desempenho = tempoAgora - tempoSalvo;
       if(desempenho > 0){
-        debugPrint('${listaDesempenhos.length}: desempenho: $desempenho');
+        debugPrint('${listaDesempenhos.length}: desempenho: $desempenho milissegundos');
         listaDesempenhos.add(desempenho);
       }
 
       if(listaDesempenhos.length == repeticoes){
         int mediaDesempenho = _media(listaDesempenhos);
         // listaDesempenhos.clear();
-        debugPrint('$rotuloSalvo: $mediaDesempenho millisegundos');
+        debugPrint('$rotuloSalvo: $mediaDesempenho milissegundos');
       }
     }
   }

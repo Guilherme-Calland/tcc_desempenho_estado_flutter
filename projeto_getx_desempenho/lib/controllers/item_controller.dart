@@ -11,6 +11,7 @@ import 'package:projeto_getx_desempenho/utils/performance.dart';
 
 class ItemController extends GetxController{
   RxList itemList = [].obs;
+  int count = 0;
 
   void createOne() {
     ItemModel novoItem = createRandom();
@@ -54,11 +55,26 @@ class ItemController extends GetxController{
 
   }
 
+  void deleteAll() {
+    Desempenho.salvarTempo('Excluindo ${itemList.length}');
+    itemList.clear();
+  }
+
   void deleteOne() {
     if(itemList.isNotEmpty){
       int index = randomize(itemList.length);
       Desempenho.salvarTempo('Excluindo 1');
       itemList.removeAt(index);
     }
+  }
+
+  void updateOne() {
+    if(count == itemList.length){
+      count = 0;
+      return;
+    }
+    itemList[count] = itemList.cast<ItemModel>()[count]..estado.nome += ' (editado)';
+    count++;
+    
   }
 }
