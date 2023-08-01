@@ -4,13 +4,11 @@ import '../styles.dart';
 class MyButton extends StatelessWidget {
 
   final Function() onTap;
-  final Function() onLongPress;
   final IconData icon;
   final Color color;
 
   const MyButton({
     required this.onTap,
-    required this.onLongPress,
     required this.icon,
     required this.color
   });
@@ -19,7 +17,6 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      onLongPress: onLongPress,
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(

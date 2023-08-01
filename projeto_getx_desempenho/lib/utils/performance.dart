@@ -26,7 +26,7 @@ class Desempenho{
 
       if(listaDesempenhos.length == repeticoes){
         int mediaDesempenho = _media(listaDesempenhos);
-        listaDesempenhos.clear();
+        // listaDesempenhos.clear();
         debugPrint('$rotuloSalvo: $mediaDesempenho millisegundos');
       }
     }

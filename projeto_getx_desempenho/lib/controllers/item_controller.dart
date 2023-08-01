@@ -54,21 +54,6 @@ class ItemController extends GetxController{
 
   }
 
-  void deleteAll() {
-    Desempenho.salvarTempo('Excluindo ${itemList.length}');
-    itemList.clear();
-  }
-
-  createMany(int quantity) {
-    List<ItemModel> items = [];
-    for(int i = 0; i < quantity; i++){
-      ItemModel newItem = createRandom();
-      items.add(newItem);
-    }
-    Desempenho.salvarTempo('Média desempenho criando $quantity');
-    itemList.value = items;
-  }
-
   void deleteOne() {
     if(itemList.isNotEmpty){
       int index = randomize(itemList.length);

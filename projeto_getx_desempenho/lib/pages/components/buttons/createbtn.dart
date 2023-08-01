@@ -18,16 +18,15 @@ class CreateBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyButton(
       onTap: () async{
-        for(int i = 0; i < Desempenho.repeticoes; i++){
+        bool finished = false;
+        do{
           _itemController.createOne();
           await Future.delayed(Duration(milliseconds: 100));
-        }
-      },
-      onLongPress: ()async{
-        for(int i = 0; i < Desempenho.repeticoes; i++){
-          _itemController.createMany(Desempenho.repeticoes);
-          await Future.delayed(Duration(milliseconds: 100));
-        }
+          if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
+            finished = true;
+            Desempenho.listaDesempenhos.clear();
+          }
+        }while(!finished);
       },
       color: createColor,
       icon: Icons.add,

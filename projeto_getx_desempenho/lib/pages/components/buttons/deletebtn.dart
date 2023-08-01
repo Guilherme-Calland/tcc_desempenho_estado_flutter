@@ -12,7 +12,6 @@ class DeleteBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyButton(
       onTap: () => _itemController.deleteOne(),
-      onLongPress: () => _itemController.deleteAll(),
       icon: Icons.delete,
       color: deleteColor,
     );
