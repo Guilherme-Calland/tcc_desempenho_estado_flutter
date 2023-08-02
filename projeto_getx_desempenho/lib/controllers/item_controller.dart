@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:projeto_getx_desempenho/data/dados.dart';
@@ -69,12 +70,28 @@ class ItemController extends GetxController{
   }
 
   void updateOne() {
-    if(count == itemList.length){
-      count = 0;
-      return;
-    }
     Desempenho.salvarTempo('Média desempenho atualizando 1');
-    itemList[count] = itemList.cast<ItemModel>()[count]..estado.nome += ' (editado)';
-    count++;
+    List<ItemModel> tempList = [];
+
+    bool updatedOne = false;
+    itemList.cast<ItemModel>().forEach((element) {
+      if(!element.estado.nome.contains("(atualizado)") && !updatedOne){
+        updatedOne = true;
+        element.estado.nome += " (atualizado)";
+        element.corBorda = Colors.white;
+      }
+      tempList.add(element);
+    });
+
+    itemList.value = tempList;
+
+    // itemList.value = itemList.cast<ItemModel>()..forEach((element) {
+    //   if(!element.estado.nome.contains("(atualizado)")){
+    //     element.estado.nome = element.estado.nome..capitalize;
+    //     element.estado.nome += " (atualizado)";
+    //     element.corBorda = Colors.white;
+    //     return;       
+    //   }
+    // });
   }
 }
