@@ -16,7 +16,7 @@ class ItemController extends GetxController{
 
   void createOne() {
     ItemModel novoItem = createRandom();
-    Desempenho.salvarTempo('Média desempenho criando 1');
+    Desempenho.salvarTempo('Média desempenho criando');
     itemList.add(novoItem);
   }
 
@@ -70,7 +70,7 @@ class ItemController extends GetxController{
   }
 
   void updateOne() {
-    Desempenho.salvarTempo('Média desempenho atualizando 1');
+    Desempenho.salvarTempo('Média desempenho atualizando');
     List<ItemModel> tempList = [];
 
     bool updatedOne = false;
@@ -84,14 +84,5 @@ class ItemController extends GetxController{
     });
 
     itemList.value = tempList;
-
-    // itemList.value = itemList.cast<ItemModel>()..forEach((element) {
-    //   if(!element.estado.nome.contains("(atualizado)")){
-    //     element.estado.nome = element.estado.nome..capitalize;
-    //     element.estado.nome += " (atualizado)";
-    //     element.corBorda = Colors.white;
-    //     return;       
-    //   }
-    // });
   }
 }

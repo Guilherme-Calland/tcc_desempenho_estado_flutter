@@ -19,14 +19,16 @@ class CreateBtn extends StatelessWidget {
       },
       onLongPress: ()async{
         bool finished = false;
+        Desempenho.listaDesempenhos.clear();
         do{
           _itemController.createOne();
-          await Future.delayed(Duration(milliseconds: 100));
+          await Desempenho.wait();
           if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
             finished = true;
-            Desempenho.listaDesempenhos.clear();
           }
         }while(!finished);
+        int mediaDesempenho = Desempenho.media(Desempenho.listaDesempenhos);
+        debugPrint('${Desempenho.rotuloSalvo}: $mediaDesempenho milissegundos');
       },
       color: createColor,
       icon: Icons.add,

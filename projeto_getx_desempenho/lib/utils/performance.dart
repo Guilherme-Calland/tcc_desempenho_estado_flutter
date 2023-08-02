@@ -20,25 +20,23 @@ class Desempenho{
       int tempoAgora = int.parse(nowTxt);
       int desempenho = tempoAgora - tempoSalvo;
       if(desempenho > 0){
-        debugPrint('${listaDesempenhos.length}: desempenho: $desempenho milissegundos');
+        debugPrint('${listaDesempenhos.length} -> $rotuloSalvo: $desempenho milissegundos');
         listaDesempenhos.add(desempenho);
-      }
-
-      if(listaDesempenhos.length == repeticoes){
-        int mediaDesempenho = _media(listaDesempenhos);
-        // listaDesempenhos.clear();
-        debugPrint('$rotuloSalvo: $mediaDesempenho milissegundos');
       }
     }
   }
 
   static String _medidaTempo(DateTime now) => '${now.millisecond}';
   
-  static int _media(List<int> listaDesempenhos) {
+  static int media(List<int> listaDesempenhos) {
     int soma = 0;
     listaDesempenhos.forEach((e){
       soma += e;
     });
     return (soma/listaDesempenhos.length).floor();
+  }
+
+  static Future<void> wait({int? milliseconds}) async {
+    await Future.delayed(Duration(milliseconds: milliseconds ?? 100),);
   }
 }
