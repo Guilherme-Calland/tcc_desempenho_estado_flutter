@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:projeto_getx_desempenho/data/dados.dart';
 import 'package:projeto_getx_desempenho/utils/performance.dart';
 import '../../../controllers/item_controller.dart';
 import '../../../styles.dart';
@@ -27,8 +25,7 @@ class CreateBtn extends StatelessWidget {
             finished = true;
           }
         }while(!finished);
-        int mediaDesempenho = Desempenho.media(Desempenho.listaDesempenhos);
-        debugPrint('${Desempenho.rotuloSalvo}: $mediaDesempenho milissegundos');
+        await Desempenho.mostrarMediaDesempenho();
       },
       color: createColor,
       icon: Icons.add,

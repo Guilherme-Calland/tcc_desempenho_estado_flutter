@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:projeto_getx_desempenho/controllers/item_controller.dart';
+import 'package:projeto_getx_desempenho/pages/components/buttons/loadbtn.dart';
 import 'package:projeto_getx_desempenho/pages/components/buttons/updatebtn.dart';
 import 'package:projeto_getx_desempenho/styles.dart';
 import 'components/buttons/createbtn.dart';
@@ -20,6 +21,8 @@ class HomePage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CreateBtn(),
+              SizedBox(width: 4),
+              LoadButton(),
               SizedBox(width: 4),
               UpdateBtn(),
               SizedBox(width: 4),

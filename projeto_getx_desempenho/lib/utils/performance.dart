@@ -39,4 +39,11 @@ class Desempenho{
   static Future<void> wait({int? milliseconds}) async {
     await Future.delayed(Duration(milliseconds: milliseconds ?? 100),);
   }
+
+  static Future<void> mostrarMediaDesempenho() async{
+    debugPrint('aguarde...');
+    await wait(milliseconds: 500);
+    int mediaDesempenho = media(Desempenho.listaDesempenhos);
+    debugPrint('média $rotuloSalvo: $mediaDesempenho milissegundos');
+  }
 }
