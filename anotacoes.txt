@@ -1,0 +1,31 @@
+Dispositivo: LGK12+
+processador 2GHz 8 Core
+RAM 3GB
+
+GETX:
+
+versão atual: 4.65
+
+média desempenho criando:     12 millisegundos
+média desempenho atualizando: 12 milissegundos
+média desempenho deletando:   12 milissegundos
+
+a biblioteca ocupa memória de 35,4 MB no dispositivo de desenvolvimento (talvez seja irrelevante).
+
+o aplicativo pesa 126 MB no modo debug.
+o aplicativo pesa 18,93 MB no modo release (mais relevante).
+
+readMe: https://pub.dev/packages/get
+github: https://github.com/jonataslaw/getx
+licença: https://pub.dev/packages/get/license
+###########
+
+###########
+
+repositório repositorio translator:
+https://github.com/gabrielpacheco23/google-translator
+
+english words: https://pub.dev/documentation/english_words/latest/
+
+referência frases JSON: https://github.com/devmatheusguerra/frasesJSON
+
