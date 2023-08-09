@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_bloc_desempenho/bloc/event.dart';
+import 'package:projeto_bloc_desempenho/main.dart';
 import '../../../styles.dart';
 import '../../../widgets/my_btn.dart';
 
@@ -7,8 +9,7 @@ class LoadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () async{
-      },
+      onTap: () => bloc.add(ReadItemEvent()),
       onLongPress: ()async{
         // bool finished = false;
         // Desempenho.listaDesempenhos.clear();

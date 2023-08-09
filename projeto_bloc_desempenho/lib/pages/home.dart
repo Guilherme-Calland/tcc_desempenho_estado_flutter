@@ -23,7 +23,6 @@ class HomePage extends StatelessWidget {
               UpdateBtn(),
               SizedBox(width: 4),
               DeleteBtn(),
-          
             ],
           ),
       backgroundColor: backgroundColor,

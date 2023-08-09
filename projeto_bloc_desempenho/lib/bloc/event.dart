@@ -11,16 +11,6 @@ class CreateItemEvent extends ItemEvent{
 
 class ReadItemEvent extends ItemEvent{}
 
-class UpdateItemEvent extends ItemEvent{
-  Estado item;
-  UpdateItemEvent({
-    required this.item
-  });
-}
+class UpdateItemEvent extends ItemEvent{}
 
-class DeleteItemEvent extends ItemEvent{
-  Estado item;
-  DeleteItemEvent({
-    required this.item
-  });
-}
+class DeleteItemEvent extends ItemEvent{}
