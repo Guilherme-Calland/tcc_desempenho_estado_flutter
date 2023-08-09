@@ -7,28 +7,21 @@ import 'package:projeto_getx_desempenho/utils/performance.dart';
 class ItemController extends GetxController{
   final RxList itemList = [].obs;
 
-  void createOne() {
-    Estado novoEstado = createRandom();
-    Desempenho.salvarTempo('desempenho criando');
-    itemList.add(novoEstado);
-  }
-
-  int randomize(int num) => Random().nextInt(num);
-
-  Estado createRandom(){
+  void createItem() {
     int index = Random().nextInt(Dados.estados.length);
     Estado estado = Estado.fromJson(Dados.estados[index]);
-    return estado;
+    Desempenho.salvarTempo('desempenho criando');
+    itemList.add(estado);
   }
 
-  void loadList(){
+  void readItems(){
     List<Estado> tempList = Dados.estados.map((e) => Estado.fromJson(e)).toList();
     itemList.clear();
-    Desempenho.salvarTempo('desempenho carregando dados, tamanho lista: ${Dados.estados.length}');
+    Desempenho.salvarTempo('desempenho carregando dados');
     itemList.value = tempList;
   }
 
-  void updateOne() {
+  void updateItem() {
     Desempenho.salvarTempo('desempenho atualizando');
     List<Estado> tempList = [];
 
@@ -44,10 +37,13 @@ class ItemController extends GetxController{
     itemList.value = tempList;
   }
 
-  void deleteOne() {
+  void deleteItem() {
     if(itemList.isNotEmpty){
       Desempenho.salvarTempo('desempenho deletando');
       itemList.removeLast();
     }
   }
+
+  int randomize(int num) => Random().nextInt(num);
+
 }

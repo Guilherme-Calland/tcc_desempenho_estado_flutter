@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../styles.dart';
 import 'components/buttons/createbtn.dart';
 import 'components/buttons/deletebtn.dart';
+import 'components/buttons/loadbtn.dart';
 import 'components/buttons/updatebtn.dart';
 import 'components/list.dart';
 
@@ -16,6 +17,8 @@ class HomePage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               CreateBtn(),
+              SizedBox(width: 4),
+              LoadButton(),
               SizedBox(width: 4),
               UpdateBtn(),
               SizedBox(width: 4),

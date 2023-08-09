@@ -1,17 +1,17 @@
-import '../model/item.dart';
+import '../model/estado.dart';
 
 abstract class ItemState{
-  List<ItemModel> items;
+  List<Estado> itemList = [];
 
   ItemState({
-    required this.items
+    required this.itemList
   });
 }
 
 class ItemInitialState extends ItemState{
-  ItemInitialState() : super(items: []);
+  ItemInitialState() : super(itemList: []);
 }
 
 class ItemSuccessState extends ItemState{
-  ItemSuccessState({required List<ItemModel> items}) : super(items: items);
+  ItemSuccessState({required List<Estado> itemList}) : super(itemList: itemList);
 }

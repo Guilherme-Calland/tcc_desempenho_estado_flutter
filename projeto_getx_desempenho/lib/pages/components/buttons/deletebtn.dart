@@ -12,12 +12,12 @@ class DeleteBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () => _itemController.deleteOne(),
+      onTap: () => _itemController.deleteItem(),
       onLongPress: ()async{
         bool finished = false;
         Desempenho.listaDesempenhos.clear();
         do{
-          _itemController.deleteOne();
+          _itemController.deleteItem();
           await Desempenho.wait();
           if(_itemController.itemList.isEmpty){
             finished = true;

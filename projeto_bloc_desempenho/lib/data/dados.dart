@@ -1,4 +1,5 @@
 class Dados{
+  
   static List<Map<String, dynamic>> estados = [
     {
       "sigla": "AC",

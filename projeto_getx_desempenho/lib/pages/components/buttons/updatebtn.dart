@@ -14,13 +14,13 @@ class UpdateBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyButton(
       onTap: (){
-        _itemController.updateOne();
+        _itemController.updateItem();
       },
       onLongPress: ()async{
         Desempenho.listaDesempenhos.clear();
         do{
           await Desempenho.wait();
-          _itemController.updateOne();
+          _itemController.updateItem();
         }while((){
           bool containsNotUpdated = false;
           _itemController.itemList.cast<Estado>().forEach((element) {

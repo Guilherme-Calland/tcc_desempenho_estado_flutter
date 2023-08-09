@@ -13,13 +13,13 @@ class LoadButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyButton(
       onTap: () async{
-        _itemController.loadList();
+        _itemController.readItems();
       },
       onLongPress: ()async{
         bool finished = false;
         Desempenho.listaDesempenhos.clear();
         do{
-          _itemController.loadList();
+          _itemController.readItems();
           await Desempenho.wait();
           if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
             finished = true;

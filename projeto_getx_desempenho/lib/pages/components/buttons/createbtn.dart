@@ -13,13 +13,13 @@ class CreateBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyButton(
       onTap: () async{
-        _itemController.createOne();
+        _itemController.createItem();
       },
       onLongPress: ()async{
         bool finished = false;
         Desempenho.listaDesempenhos.clear();
         do{
-          _itemController.createOne();
+          _itemController.createItem();
           await Desempenho.wait();
           if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
             finished = true;

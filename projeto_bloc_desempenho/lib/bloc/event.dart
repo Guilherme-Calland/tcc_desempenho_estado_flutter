@@ -1,19 +1,26 @@
-import '../model/item.dart';
+import '../model/estado.dart';
 
 abstract class ItemEvent{}
 
-class AddItemEvent extends ItemEvent{
-  ItemModel item;
-  AddItemEvent({required this.item});
+class CreateItemEvent extends ItemEvent{
+  Estado item;
+  CreateItemEvent({
+    required this.item
+  });
 }
 
-class RemoveItemEvent extends ItemEvent{
-  ItemModel item;
-  RemoveItemEvent({required this.item});
-}
+class ReadItemEvent extends ItemEvent{}
 
 class UpdateItemEvent extends ItemEvent{
-  ItemModel item;
-  UpdateItemEvent({required this.item});
+  Estado item;
+  UpdateItemEvent({
+    required this.item
+  });
 }
 
+class DeleteItemEvent extends ItemEvent{
+  Estado item;
+  DeleteItemEvent({
+    required this.item
+  });
+}

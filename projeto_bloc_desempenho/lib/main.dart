@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_bloc_desempenho/pages/home.dart';
 
+import 'bloc/bloc.dart';
+
 void main() => runApp(DesempenhoGetxApp());
+
+final ItemBloc bloc = ItemBloc();
 
 class DesempenhoGetxApp extends StatelessWidget {
   const DesempenhoGetxApp({super.key});
