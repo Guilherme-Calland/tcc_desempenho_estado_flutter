@@ -13,16 +13,14 @@ class DeleteBtn extends StatelessWidget {
     return MyButton(
       onTap: () => bloc.add(DeleteItemEvent()),
       onLongPress: ()async{
-        // bool finished = false;
-        // Desempenho.listaDesempenhos.clear();
-        // do{
-        //   _itemController.deleteOne();
-        //   await Desempenho.wait();
-        //   if(_itemController.itemList.isEmpty){
-        //     finished = true;
-        //   }
-        // }while(!finished);
-        // await Desempenho.mostrarMediaDesempenho();
+        Desempenho.listaDesempenhos.clear();
+        int i = 0;
+        do{
+          i++;
+          bloc.add(DeleteItemEvent());
+          await Desempenho.wait();
+        }while(i < 100);
+        await Desempenho.mostrarMediaDesempenho();
       },
       icon: Icons.delete,
       color: deleteColor,

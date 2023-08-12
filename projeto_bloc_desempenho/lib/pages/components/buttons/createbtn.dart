@@ -5,6 +5,7 @@ import '../../../data/dados.dart';
 import '../../../main.dart';
 import '../../../model/estado.dart';
 import '../../../styles.dart';
+import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
 
 class CreateBtn extends StatelessWidget {
@@ -18,16 +19,16 @@ class CreateBtn extends StatelessWidget {
         bloc.add(CreateItemEvent(item: estado));
       },
       onLongPress: ()async{
-        // bool finished = false;
-        // Desempenho.listaDesempenhos.clear();
-        // do{
-        //   _itemController.createOne();
-        //   await Desempenho.wait();
-        //   if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
-        //     finished = true;
-        //   }
-        // }while(!finished);
-        // await Desempenho.mostrarMediaDesempenho();
+        Desempenho.listaDesempenhos.clear();
+        int i = 0;
+        do{
+          i++;
+          int index = Random().nextInt(Dados.estados.length);
+          Estado estado = Estado.fromJson(Dados.estados[index]);
+          bloc.add(CreateItemEvent(item: estado));
+          await Desempenho.wait();
+        }while(i < 100);
+        await Desempenho.mostrarMediaDesempenho();
       },
       color: createColor,
       icon: Icons.add,

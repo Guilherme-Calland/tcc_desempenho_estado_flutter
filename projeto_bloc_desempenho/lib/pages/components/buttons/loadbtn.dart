@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_bloc_desempenho/bloc/event.dart';
 import 'package:projeto_bloc_desempenho/main.dart';
 import '../../../styles.dart';
+import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
 
 class LoadButton extends StatelessWidget {
@@ -11,16 +12,13 @@ class LoadButton extends StatelessWidget {
     return MyButton(
       onTap: () => bloc.add(ReadItemEvent()),
       onLongPress: ()async{
-        // bool finished = false;
-        // Desempenho.listaDesempenhos.clear();
-        // do{
-        //   _itemController.loadList();
-        //   await Desempenho.wait();
-        //   if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
-        //     finished = true;
-        //   }
-        // }while(!finished);
-        // await Desempenho.mostrarMediaDesempenho();
+        int i = 0;
+        Desempenho.listaDesempenhos.clear();
+        do{
+          i++;
+          bloc.add(ReadItemEvent());
+        }while(i > 100);
+        await Desempenho.mostrarMediaDesempenho();
       },
       color: readColor,
       icon: Icons.list,

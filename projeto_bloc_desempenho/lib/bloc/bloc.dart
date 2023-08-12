@@ -33,8 +33,8 @@ class ItemBloc extends Bloc<ItemEvent, ItemState>{
 
   _updateItem() {
     List<Estado> tempList = [];
+    bool updated = false;
     _itemList.forEach((element) {
-      bool updated = false;
       if(!element.nome.contains("(atualizado)") && !updated){
         updated = true;
         element.nome += ' (atualizado)';
@@ -49,7 +49,9 @@ class ItemBloc extends Bloc<ItemEvent, ItemState>{
   }
   
   _deleteItem() {
-    _itemList.removeLast();
+    if(_itemList.isNotEmpty){
+      _itemList.removeLast();
+    }
     Desempenho.salvarTempo('desempenho excluíndo');
     return _itemList;
   }
