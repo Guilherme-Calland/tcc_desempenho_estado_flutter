@@ -5,7 +5,7 @@ import '../../../controllers/item_controller.dart';
 import '../../../styles.dart';
 import '../../../utils/performance.dart';
 
-class DeleteBtn extends StatelessWidget {
+class DeleteButton extends StatelessWidget {
 
   final _itemController = Get.find<ItemController>();
 

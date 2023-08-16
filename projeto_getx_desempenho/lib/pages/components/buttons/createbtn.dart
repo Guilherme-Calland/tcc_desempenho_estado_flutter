@@ -5,7 +5,7 @@ import '../../../controllers/item_controller.dart';
 import '../../../styles.dart';
 import '../../../widgets/my_btn.dart';
 
-class CreateBtn extends StatelessWidget {
+class CreateButton extends StatelessWidget {
 
   final _itemController = Get.find<ItemController>();
 

@@ -6,7 +6,7 @@ import '../../../model/estado.dart';
 import '../../../styles.dart';
 import '../../../widgets/my_btn.dart';
 
-class UpdateBtn extends StatelessWidget {
+class UpdateButton extends StatelessWidget {
 
   final _itemController = Get.find<ItemController>();
 
