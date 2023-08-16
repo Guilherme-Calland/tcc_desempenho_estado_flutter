@@ -7,19 +7,20 @@ import '../../../utils/performance.dart';
 
 class DeleteButton extends StatelessWidget {
 
-  final _itemController = Get.find<ItemController>();
 
   @override
   Widget build(BuildContext context) {
+    final recipeController = Get.find<RecipeController>();
+
     return MyButton(
-      onTap: () => _itemController.deleteItem(),
+      onTap: () => recipeController.deleteItem(),
       onLongPress: ()async{
         bool finished = false;
         Desempenho.listaDesempenhos.clear();
         do{
-          _itemController.deleteItem();
+          recipeController.deleteItem();
           await Desempenho.wait();
-          if(_itemController.itemList.isEmpty){
+          if(recipeController.recipeList.isEmpty){
             finished = true;
           }
         }while(!finished);

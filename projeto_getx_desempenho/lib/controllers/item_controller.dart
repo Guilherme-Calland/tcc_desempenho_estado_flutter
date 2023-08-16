@@ -1,46 +1,45 @@
 import 'dart:math';
 import 'package:get/get.dart';
 import 'package:projeto_getx_desempenho/data/dados.dart';
-import 'package:projeto_getx_desempenho/model/estado.dart';
+import 'package:projeto_getx_desempenho/model/recipe.dart';
 import 'package:projeto_getx_desempenho/utils/performance.dart';
 
-class ItemController extends GetxController{
-  final RxList itemList = [].obs;
+class RecipeController extends GetxController{
+  final RxList recipeList = [].obs;
 
   void createItem() {
-    int index = Random().nextInt(Dados.estados.length);
-    Estado estado = Estado.fromJson(Dados.estados[index]);
+    int index = Random().nextInt(Dados.recipes.length);
+    Recipe estado = Recipe.fromJson(Dados.recipes[index]);
     Desempenho.salvarTempo('desempenho criando');
-    itemList.add(estado);
+    recipeList.add(estado);
   }
 
   void readItems(){
-    List<Estado> tempList = Dados.estados.map((e) => Estado.fromJson(e)).toList();
-    itemList.clear();
+    List<Recipe> tempList = Dados.recipes.map((e) => Recipe.fromJson(e)).toList();
+    recipeList.clear();
     Desempenho.salvarTempo('desempenho carregando dados');
-    itemList.value = tempList;
+    recipeList.value = tempList;
   }
 
   void updateItem() {
-    Desempenho.salvarTempo('desempenho atualizando');
-    List<Estado> tempList = [];
+    List<Recipe> tempList = [];
 
     bool updatedOne = false;
-    itemList.cast<Estado>().forEach((element) {
-      if(!element.nome.contains("(atualizado)") && !updatedOne){
+    recipeList.cast<Recipe>().forEach((element) {
+      if(!element.done && !updatedOne){
         updatedOne = true;
-        element.nome += " (atualizado)";
-        element.cidades = element.cidades.reversed.toList();
+        element.done = true;
       }
       tempList.add(element);
     });
-    itemList.value = tempList;
+    Desempenho.salvarTempo('desempenho atualizando');
+    recipeList.value = tempList;
   }
 
   void deleteItem() {
-    if(itemList.isNotEmpty){
+    if(recipeList.isNotEmpty){
       Desempenho.salvarTempo('desempenho deletando');
-      itemList.removeLast();
+      recipeList.removeLast();
     }
   }
 

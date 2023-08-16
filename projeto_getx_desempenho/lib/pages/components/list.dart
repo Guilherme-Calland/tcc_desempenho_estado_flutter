@@ -1,26 +1,26 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projeto_getx_desempenho/model/estado.dart';
+import 'package:projeto_getx_desempenho/model/recipe.dart';
 import 'package:projeto_getx_desempenho/utils/performance.dart';
 import '../../controllers/item_controller.dart';
-import '../../widgets/item_card.dart';
+import '../../widgets/recipe_card/item_card.dart';
 
 class ItemList extends StatelessWidget {
-  final _itemController = Get.find<ItemController>();
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
+    final recipeController = Get.find<RecipeController>();
 
+    return Obx(() {
       ListView list = ListView.builder(
         // ignore: invalid_use_of_protected_member
-        itemCount: _itemController.itemList.value.length,
+        itemCount: recipeController.recipeList.value.length,
         itemBuilder: (context, index) {
-          Estado item = _itemController.itemList[index];
+          Recipe recipe = recipeController.recipeList[index];
           return Padding(
             padding: const EdgeInsets.only(top: 16),
-            child: ItemCard(item),
+            child: RecipeCard(recipe),
           );
         },
       );

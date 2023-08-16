@@ -7,19 +7,19 @@ import '../../../widgets/my_btn.dart';
 
 class CreateButton extends StatelessWidget {
 
-  final _itemController = Get.find<ItemController>();
-
   @override
   Widget build(BuildContext context) {
+    final recipeController = Get.find<RecipeController>();
+
     return MyButton(
       onTap: () async{
-        _itemController.createItem();
+        recipeController.createItem();
       },
       onLongPress: ()async{
         bool finished = false;
         Desempenho.listaDesempenhos.clear();
         do{
-          _itemController.createItem();
+          recipeController.createItem();
           await Desempenho.wait();
           if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
             finished = true;

@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(ItemController());
+    Get.put(RecipeController());
 
     return ScreenScaffold(
       itemList: ItemList(),
