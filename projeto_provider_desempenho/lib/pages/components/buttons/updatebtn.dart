@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:projeto_getx_desempenho/utils/performance.dart';
 import '../../../controllers/item_controller.dart';
 import '../../../model/estado.dart';
 import '../../../styles.dart';
+import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
 
 class UpdateBtn extends StatelessWidget {
 
-  final _itemController = Get.find<ItemController>();
-
   @override
   Widget build(BuildContext context) {
+
+    ItemController itemProvider = ItemController.getProvider(context);
+
     return MyButton(
       onTap: (){
-        _itemController.updateItem();
+        itemProvider.updateItem();
       },
       onLongPress: ()async{
         Desempenho.listaDesempenhos.clear();
         do{
           await Desempenho.wait();
-          _itemController.updateItem();
+          itemProvider.updateItem();
         }while((){
           bool containsNotUpdated = false;
-          _itemController.itemList.cast<Estado>().forEach((element) {
+          itemProvider.itemList.cast<Estado>().forEach((element) {
             if(!element.nome.contains("(atualizado)")){
               containsNotUpdated = true;
             }

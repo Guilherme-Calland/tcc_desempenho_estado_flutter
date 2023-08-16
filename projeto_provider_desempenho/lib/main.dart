@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:projeto_getx_desempenho/pages/home.dart';
+import 'package:projeto_provider_desempenho/pages/home.dart';
+import 'package:provider/provider.dart';
+
+import 'controllers/item_controller.dart';
 
 void main() => runApp(DesempenhoGetxApp());
 
@@ -9,9 +11,12 @@ class DesempenhoGetxApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: ChangeNotifierProvider<ItemController>(
+        create: (_) => ItemController(),
+        child: HomePage(),
+      )
     );
   }
 }

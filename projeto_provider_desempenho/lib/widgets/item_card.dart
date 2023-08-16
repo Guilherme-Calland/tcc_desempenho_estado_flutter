@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_getx_desempenho/model/estado.dart';
+import '../model/estado.dart';
 
 
 class ItemCard extends StatelessWidget {
