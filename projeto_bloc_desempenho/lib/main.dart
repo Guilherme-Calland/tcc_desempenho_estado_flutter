@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_bloc_desempenho/pages/home/home.dart';
 
-import 'bloc/bloc.dart';
+import 'blocs/bloc/bloc.dart';
 
 void main() => runApp(DesempenhoGetxApp());
 
