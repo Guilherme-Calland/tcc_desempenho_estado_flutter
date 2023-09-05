@@ -189,7 +189,6 @@ class Dados{
 			},
 			"modoPreparo": "Deixe o iogurte dessorar por 1 hora colocando os 4 potes de iogurte em um filtro de papel para café Despeje em uma vasilha e leve ao freezer para congelar Junte o iogurte com o morango no liquidificador (ambos congelados) Bata até misturar, junte o adoçante e misture Coloque em um refratário, cubra com papel filme bem junto ao refratário e leve ao freezer até servir",
 			"link_imagem": "http://data.whicdn.com/images/25686711/large.jpg",
-			"link_imagem":"http://photos1.blogger.com/blogger/5780/1852/1600/DSCF0347.jpg"
 		},
 
 		{

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_getx_desempenho/utils/image_paths.dart';
+import 'package:projeto_getx_desempenho/widgets/recipe_card/components/section.dart';
+
+import 'section_label.dart';
 
 class BaseIngredients extends StatelessWidget {
   final int quantityIngredients;
@@ -11,17 +15,15 @@ class BaseIngredients extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Icon(Icons.receipt_rounded, color: Colors.white),
-            SizedBox(width: 4,),
-            Text('Ingredients ($quantityIngredients)', style: TextStyle(fontSize: 18),),
-          ],
-        ),
-        SizedBox(height: 6), ...baseIngredients.map((ingr) => Text('* $ingr')).toList(),
-      ],
+    return Section(
+      sectionLabel: SectionLabel(
+          text: 'Ingredientes ($quantityIngredients)',
+          iconPath: MyImagePaths.ingredients,
+      ), 
+      elementList: baseIngredients
     );
   }
 }
+
+
+

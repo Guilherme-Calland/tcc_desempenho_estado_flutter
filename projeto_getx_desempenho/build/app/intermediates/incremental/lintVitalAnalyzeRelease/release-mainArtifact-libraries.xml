@@ -4,9 +4,35 @@
       jars="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\app\intermediates\flutter\release\libs.jar"
       resolved="__local_aars__:C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
-      name="io.flutter:flutter_embedding_release:1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084@jar"
-      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084\9cba41c99092591788ce04ddd2ca65cc86ce15b8\flutter_embedding_release-1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084.jar"
-      resolved="io.flutter:flutter_embedding_release:1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084"/>
+      name="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\android@@:sqflite::release"
+      jars="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\sqflite\.transforms\4e0cf8d8767a7229d46b7106e8aa2701\transformed\out\jars\classes.jar;C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\sqflite\.transforms\4e0cf8d8767a7229d46b7106e8aa2701\transformed\out\jars\libs\R.jar"
+      resolved="com.tekartik.sqflite:sqflite:unspecified"
+      folder="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\sqflite\.transforms\4e0cf8d8767a7229d46b7106e8aa2701\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\android@@:path_provider_android::release"
+      jars="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\path_provider_android\.transforms\3abc969d127761feb2190979b2fe0c20\transformed\out\jars\classes.jar;C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\path_provider_android\.transforms\3abc969d127761feb2190979b2fe0c20\transformed\out\jars\libs\R.jar"
+      resolved="io.flutter.plugins.pathprovider:path_provider_android:unspecified"
+      folder="C:\Users\LENOVO\_guilherme\ufpe\TCC\projeto_desempenho\tcc_desempenho_estado_flutter\projeto_getx_desempenho\build\path_provider_android\.transforms\3abc969d127761feb2190979b2fe0c20\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="io.flutter:flutter_embedding_release:1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d@jar"
+      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d\7b78fb4a8a09dd69a2d68d998b9a034ec2895610\flutter_embedding_release-1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d.jar"
+      resolved="io.flutter:flutter_embedding_release:1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d"/>
   <library
       name="androidx.window:window-java:1.0.0-beta04@aar"
       jars="C:\Users\LENOVO\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\jars\classes.jar"
@@ -50,21 +76,9 @@
       jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.7.10\1ef73fee66f45d52c67e2aca12fd945dbe0659bf\kotlin-stdlib-jdk7-1.7.10.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"/>
   <library
-      name="io.flutter:armeabi_v7a_release:1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084@jar"
-      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\io.flutter\armeabi_v7a_release\1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084\be798ac70f6ec03e19a065fd52e31e30aebcf134\armeabi_v7a_release-1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084.jar"
-      resolved="io.flutter:armeabi_v7a_release:1.0.0-d44b5a94c976fbb65815374f61ab5392a220b084"/>
-  <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
-      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.7.10\d2abf9e77736acc4450dc4a3f707fa2c10f5099d\kotlin-stdlib-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
-  <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
-      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.7.10\bac80c520d0a9e3f3673bc2658c6ed02ef45a76a\kotlin-stdlib-common-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
-  <library
-      name="org.jetbrains:annotations:13.0@jar"
-      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
-      resolved="org.jetbrains:annotations:13.0"/>
+      name="io.flutter:armeabi_v7a_release:1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d@jar"
+      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\io.flutter\armeabi_v7a_release\1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d\8cebf6bec1dd3b9a46b26522897068fd3f014a71\armeabi_v7a_release-1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d.jar"
+      resolved="io.flutter:armeabi_v7a_release:1.0.0-cdbeda788a293fa29665dc3fa3d6e63bd221cb0d"/>
   <library
       name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
       jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common-java8\2.2.0\cd3478503da69b1a7e0319bd2d1389943db9b364\lifecycle-common-java8-2.2.0.jar"
@@ -251,9 +265,21 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.annotation:annotation:1.2.0@jar"
-      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation\1.2.0\57136ff68ee784c6e19db34ed4a175338fadfde1\annotation-1.2.0.jar"
-      resolved="androidx.annotation:annotation:1.2.0"/>
+      name="androidx.annotation:annotation:1.5.0@jar"
+      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\androidx.annotation\annotation\1.5.0\857678d6b4ca7b28571ef7935c668bdb57e15027\annotation-1.5.0.jar"
+      resolved="androidx.annotation:annotation:1.5.0"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
+      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.7.10\d2abf9e77736acc4450dc4a3f707fa2c10f5099d\kotlin-stdlib-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
+      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.7.10\bac80c520d0a9e3f3673bc2658c6ed02ef45a76a\kotlin-stdlib-common-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
+  <library
+      name="org.jetbrains:annotations:13.0@jar"
+      jars="C:\Users\LENOVO\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
+      resolved="org.jetbrains:annotations:13.0"/>
   <library
       name="androidx.annotation:annotation-experimental:1.1.0@aar"
       jars="C:\Users\LENOVO\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\jars\classes.jar"

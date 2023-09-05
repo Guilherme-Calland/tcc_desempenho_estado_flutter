@@ -4,7 +4,6 @@ class Recipe{
   late List<String> baseIngredients;
   List<String>? measuredIngredients;
   String? howToPrepare;
-  String? image;
   late bool done;
 
 
@@ -14,7 +13,6 @@ class Recipe{
     required this.baseIngredients,
     required this.measuredIngredients,
     required this.howToPrepare,
-    required this.image,
     this.done = false
   });
 
@@ -27,10 +25,9 @@ class Recipe{
 
     name = json['receita'] as String?;
     quantityIngredients = int.parse(baseIngr['0']);
-    baseIngredients = baseIngredientsList;
-    measuredIngredients = ((json['ingredients'] as String?) ?? '').split(', ');
-    howToPrepare = json['modoPreparo'];
-    image = json['link_imagem'];
+    baseIngredients = baseIngredientsList..removeAt(0);
+    measuredIngredients = ((json['ingredientes'] as String?) ?? '').split(', ');
+    howToPrepare = json['modoPreparo'] as String?;
     done = false;
   }
 }

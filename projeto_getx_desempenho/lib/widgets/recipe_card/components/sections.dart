@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 class RecipeSectionList extends StatelessWidget {
+
   final List<Widget> sectionList;
 
-  const RecipeSectionList(
-    this.sectionList
-  );
+  const RecipeSectionList(this.sectionList);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,9 @@ class RecipeSectionList extends StatelessWidget {
       ), 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: _buildCustomColumn(),
+        children:  _buildCustomColumn()
+        
+        ,
       ),
     );
   }
@@ -31,15 +32,16 @@ class RecipeSectionList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 8),
         child: sectionList[i],
       );
-      if(i != 0){
+      if(i == 0){
         organizedSection = paddedSection;
       }else{
         organizedSection = Column(
-            children: [
-              Divider(),
-              paddedSection,
-            ],
-          );
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Divider(color: Colors.white,),
+            paddedSection,
+          ],
+        );
       }
 
       organizedList.add(organizedSection);
@@ -49,3 +51,4 @@ class RecipeSectionList extends StatelessWidget {
     
   }
 }
+
