@@ -1,4 +1,4 @@
-#Tue Sep 05 12:25:16 BRT 2023
+#Tue Sep 05 12:34:14 BRT 2023
 base.0=C\:\\Users\\LENOVO\\_guilherme\\ufpe\\TCC\\projeto_desempenho\\tcc_desempenho_estado_flutter\\projeto_getx_desempenho\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
