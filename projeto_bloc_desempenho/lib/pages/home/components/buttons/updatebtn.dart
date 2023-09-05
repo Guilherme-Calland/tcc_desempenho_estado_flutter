@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_bloc_desempenho/bloc/event.dart';
 import 'package:projeto_bloc_desempenho/main.dart';
-import '../../../model/estado.dart';
-import '../../../styles.dart';
-import '../../../utils/performance.dart';
-import '../../../widgets/my_btn.dart';
+import '../../../../styles.dart';
+import '../../../../utils/performance.dart';
+import '../../../../widgets/my_btn.dart';
 
 class UpdateBtn extends StatelessWidget {
 

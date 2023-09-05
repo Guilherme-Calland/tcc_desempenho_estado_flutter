@@ -1,11 +1,11 @@
-import '../model/estado.dart';
+import 'package:projeto_bloc_desempenho/model/recipe.dart';
 
 abstract class ItemEvent{}
 
 class CreateItemEvent extends ItemEvent{
-  Estado item;
+  Recipe recipe;
   CreateItemEvent({
-    required this.item
+    required this.recipe
   });
 }
 

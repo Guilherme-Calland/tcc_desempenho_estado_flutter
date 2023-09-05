@@ -1,13 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:projeto_bloc_desempenho/bloc/event.dart';
+import 'package:projeto_bloc_desempenho/model/recipe.dart';
 import 'package:projeto_bloc_desempenho/utils/performance.dart';
-import 'package:projeto_bloc_desempenho/widgets/item_card.dart';
-import '../../bloc/bloc.dart';
-import '../../bloc/state.dart';
-import '../../main.dart';
-import '../../model/estado.dart';
+import 'package:projeto_bloc_desempenho/widgets/recipe_card/item_card.dart';
+import '../../../bloc/bloc.dart';
+import '../../../bloc/state.dart';
+import '../../../main.dart';
 
 class ItemList extends StatelessWidget {
   @override
@@ -18,14 +17,14 @@ class ItemList extends StatelessWidget {
         if(state is ItemInitialState){
           return SizedBox();
         }else{
-          final itemList = state.itemList;
+          final itemList = state.recipeList;
           ListView list = ListView.builder(
             itemCount: itemList.length,
             itemBuilder: (context, index){
-              Estado item = itemList[index];
+              Recipe item = itemList[index];
               return Padding(
                 padding: const EdgeInsets.only(top: 16),
-                child: ItemCard(item),
+                child: RecipeCard(item),
               );
             },
           );

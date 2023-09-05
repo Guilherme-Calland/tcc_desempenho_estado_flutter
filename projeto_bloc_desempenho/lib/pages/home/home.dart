@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../styles.dart';
+import '../../styles.dart';
 import 'components/buttons/createbtn.dart';
 import 'components/buttons/deletebtn.dart';
 import 'components/buttons/loadbtn.dart';
