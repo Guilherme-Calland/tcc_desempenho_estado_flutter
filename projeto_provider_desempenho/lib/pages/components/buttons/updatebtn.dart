@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_provider_desempenho/model/recipe.dart';
 import '../../../controllers/item_controller.dart';
-import '../../../model/estado.dart';
 import '../../../styles.dart';
 import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
@@ -23,9 +23,10 @@ class UpdateBtn extends StatelessWidget {
           itemProvider.updateItem();
         }while((){
           bool containsNotUpdated = false;
-          itemProvider.itemList.cast<Estado>().forEach((element) {
-            if(!element.nome.contains("(atualizado)")){
+          itemProvider.recipeList.cast<Recipe>().forEach((element) {
+            if(!element.done && !containsNotUpdated){
               containsNotUpdated = true;
+              element.done = true;
             }
           });
           return containsNotUpdated;

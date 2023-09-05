@@ -19,7 +19,7 @@ class DeleteBtn extends StatelessWidget {
         do{
           itemProvider.deleteItem();
           await Desempenho.wait();
-          if(itemProvider.itemList.isEmpty){
+          if(itemProvider.recipeList.isEmpty){
             finished = true;
           }
         }while(!finished);

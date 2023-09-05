@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:projeto_provider_desempenho/widgets/recipe_card/item_card.dart';
 import 'package:provider/provider.dart';
 import '../../controllers/item_controller.dart';
-import '../../model/estado.dart';
+import '../../model/recipe.dart';
 import '../../utils/performance.dart';
-import '../../widgets/item_card.dart';
 
 class ItemList extends StatelessWidget {
 
@@ -14,12 +14,12 @@ class ItemList extends StatelessWidget {
 
       ListView list = ListView.builder(
         // ignore: invalid_use_of_protected_member
-        itemCount: value.itemList.length,
+        itemCount: value.recipeList.length,
         itemBuilder: (context, index) {
-          Estado item = value.itemList[index];
+          Recipe item = value.recipeList[index];
           return Padding(
             padding: const EdgeInsets.only(top: 16),
-            child: ItemCard(item),
+            child: RecipeCard(item),
           );
         },
       );

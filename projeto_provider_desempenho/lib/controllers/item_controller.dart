@@ -2,50 +2,50 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../data/dados.dart';
-import '../model/estado.dart';
+import '../model/recipe.dart';
 import '../utils/performance.dart';
 
 class ItemController extends ChangeNotifier{
-  final List<Estado> itemList = [];
+  final List<Recipe> recipeList = [];
 
   static ItemController getProvider(BuildContext context) => Provider.of<ItemController>(context, listen: false);
 
   void createItem() {
-    int index = Random().nextInt(Dados.estados.length);
-    Estado estado = Estado.fromJson(Dados.estados[index]);
-    itemList.add(estado);
+    int index = Random().nextInt(Dados.recipes.length);
+    Recipe recipe = Recipe.fromJson(Dados.recipes[index]);
+    recipeList.add(recipe);
     Desempenho.salvarTempo('desempenho criando');
     notifyListeners();
   }
 
   void readItems(){
-    List<Estado> tempList = Dados.estados.map((e) => Estado.fromJson(e)).toList();
-    itemList.clear();
-    itemList.addAll(tempList);
+    List<Recipe> tempList = Dados.recipes.map((e) => Recipe.fromJson(e)).toList();
+    recipeList.clear();
+    recipeList.addAll(tempList);
     Desempenho.salvarTempo('desempenho carregando dados');
     notifyListeners();
   }
 
   void updateItem() {
-    List<Estado> tempList = [];
+
+    List<Recipe> tempList = [];
     bool updatedOne = false;
-    itemList.cast<Estado>().forEach((element) {
-      if(!element.nome.contains("(atualizado)") && !updatedOne){
+    recipeList.cast<Recipe>().forEach((element) {
+      if(!element.done && !updatedOne){
         updatedOne = true;
-        element.nome += " (atualizado)";
-        element.cidades = element.cidades.reversed.toList();
+        element.done = true;
       }
       tempList.add(element);
     });
-    itemList.clear();
-    itemList.addAll(tempList);
+    recipeList.clear();
+    recipeList.addAll(tempList);
     Desempenho.salvarTempo('desempenho atualizando');
     notifyListeners();
   }
 
   void deleteItem() {
-    if(itemList.isNotEmpty){
-      itemList.removeLast();
+    if(recipeList.isNotEmpty){
+      recipeList.removeLast();
       Desempenho.salvarTempo('desempenho deletando');
       notifyListeners();
     }
