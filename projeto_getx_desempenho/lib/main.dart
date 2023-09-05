@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:projeto_getx_desempenho/pages/home%20copy/home.dart';
+import 'pages/page/home/home.dart';
 
 void main() => runApp(DesempenhoGetxApp());
 
