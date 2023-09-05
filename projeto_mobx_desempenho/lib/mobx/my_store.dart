@@ -1,7 +1,6 @@
 import 'package:mobx/mobx.dart';
-import 'package:projeto_mobx_desempenho/model/estado.dart';
-
 import '../data/dados.dart';
+import '../model/recipe.dart';
 import '../utils/performance.dart';
 
 part 'my_store.g.dart';
@@ -10,43 +9,42 @@ class MyStore = _MyStore with _$MyStore;
 
 abstract class _MyStore with Store{
   @observable
-  ObservableList<Estado> itemList = ObservableList<Estado>.of([]);
+  ObservableList<Recipe> recipeList = ObservableList<Recipe>.of([]);
 
   @action
-  createItem(Estado item) {
+  createItem(Recipe item) {
     Desempenho.salvarTempo('desempenho criando');
-    itemList.add(item);
+    recipeList.add(item);
   }
 
   @action
   readItems() {
-    itemList.clear();
+    recipeList.clear();
     Desempenho.salvarTempo('desempenho lendo');
-    itemList.addAll(Dados.estados.map((e) => Estado.fromJson(e)).toList());
+    recipeList.addAll(Dados.recipes.map((e) => Recipe.fromJson(e)).toList());
   }
 
   @action
   updateItem() {
-    List<Estado> tempList = [];
+    List<Recipe> tempList = [];
     bool updated = false;
-    itemList.forEach((element) {
-      if(!element.nome.contains("(atualizado)") && !updated){
+    recipeList.cast<Recipe>().forEach((element) {
+      if(!element.done && !updated){
         updated = true;
-        element.nome += ' (atualizado)';
-        element.cidades = element.cidades.reversed.toList();
+        element.done = true;
       }
       tempList.add(element);
     });
-    itemList.clear();
+    recipeList.clear();
     Desempenho.salvarTempo('desempenho atualizando');
-    itemList.addAll(tempList);
+    recipeList.addAll(tempList);
   }
 
   @action
   deleteItem() {
-    if(itemList.isNotEmpty){
+    if(recipeList.isNotEmpty){
       Desempenho.salvarTempo('desempenho excluíndo');
-      itemList.removeLast();
+      recipeList.removeLast();
     }
   }
 }

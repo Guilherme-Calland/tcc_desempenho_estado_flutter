@@ -9,18 +9,18 @@ part of 'my_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$MyStore on _MyStore, Store {
-  late final _$itemListAtom = Atom(name: '_MyStore.itemList', context: context);
+  late final _$itemListAtom = Atom(name: '_MyStore.recipeList', context: context);
 
   @override
-  ObservableList<Estado> get itemList {
+  ObservableList<Recipe> get recipeList {
     _$itemListAtom.reportRead();
-    return super.itemList;
+    return super.recipeList;
   }
 
   @override
-  set itemList(ObservableList<Estado> value) {
-    _$itemListAtom.reportWrite(value, super.itemList, () {
-      super.itemList = value;
+  set recipeList(ObservableList<Recipe> value) {
+    _$itemListAtom.reportWrite(value, super.recipeList, () {
+      super.recipeList = value;
     });
   }
 
@@ -28,7 +28,7 @@ mixin _$MyStore on _MyStore, Store {
       ActionController(name: '_MyStore', context: context);
 
   @override
-  dynamic createItem(Estado item) {
+  dynamic createItem(Recipe item) {
     final _$actionInfo =
         _$_MyStoreActionController.startAction(name: '_MyStore.createItem');
     try {
@@ -74,7 +74,7 @@ mixin _$MyStore on _MyStore, Store {
   @override
   String toString() {
     return '''
-itemList: ${itemList}
+recipeList: ${recipeList}
     ''';
   }
 }

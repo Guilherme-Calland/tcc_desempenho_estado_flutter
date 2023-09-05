@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_mobx_desempenho/mobx/my_store.dart';
-import '../../../model/estado.dart';
+import 'package:projeto_mobx_desempenho/model/recipe.dart';
 import '../../../styles.dart';
 import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
@@ -17,13 +17,14 @@ class UpdateBtn extends StatelessWidget {
           await Desempenho.wait();
           myStore.updateItem();
         }while((){
-          bool containsNotUpdated = false;
-          myStore.itemList.cast<Estado>().forEach((element) {
-            if(!element.nome.contains("(atualizado)")){
-              containsNotUpdated = true;
+          bool updated = false;
+          myStore.recipeList.cast<Recipe>().forEach((element) {
+            if(!element.done && !updated){
+              updated = true;
+              element.done = true;
             }
           });
-          return containsNotUpdated;
+          return updated;
         }());
         await Desempenho.mostrarMediaDesempenho();
       },
