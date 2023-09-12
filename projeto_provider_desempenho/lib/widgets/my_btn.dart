@@ -6,12 +6,14 @@ class MyButton extends StatelessWidget {
   final Function()? onLongPress;
   final IconData icon;
   final Color color;
+  final Function()? onDoubleTap;
 
   const MyButton({
     required this.onTap,
     this.onLongPress,
     required this.icon,
-    required this.color
+    required this.color,
+    this.onDoubleTap,
   });
 
   @override
@@ -19,6 +21,7 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       onLongPress: onLongPress,
+      onDoubleTap: onDoubleTap,
       child: Container(
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
