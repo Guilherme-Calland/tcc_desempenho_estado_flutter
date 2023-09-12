@@ -11,15 +11,23 @@ class DeleteBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () => bloc.add(DeleteItemEvent()),
+      onTap: (){
+        Desempenho.reset();
+        bloc.add(DeleteItemEvent());
+      },
+      onDoubleTap: (){
+        bloc.add(DeleteAllItemEvent());
+      }
+      ,
       onLongPress: ()async{
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         int i = 0;
         do{
           i++;
           bloc.add(DeleteItemEvent());
           await Desempenho.wait();
-        }while(i < 100);
+        }while(i < Desempenho.repeticoes);
+        
         await Desempenho.mostrarMediaDesempenho();
       },
       icon: Icons.delete,

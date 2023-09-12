@@ -10,17 +10,19 @@ class UpdateBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () => bloc.add(UpdateItemEvent()),
+      onTap: (){
+        Desempenho.reset();
+        bloc.add(UpdateItemEvent());
+      },
       onLongPress: ()async{
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         int i = 0;
         do{
           i++;
           bloc.add(UpdateItemEvent());
           await Desempenho.wait();
-        }while((){
-          return i < 100;
-        }());
+        }while(i < Desempenho.repeticoes);
+
         await Desempenho.mostrarMediaDesempenho();
       },
       color: editColor,

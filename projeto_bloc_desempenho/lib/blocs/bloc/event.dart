@@ -14,3 +14,5 @@ class ReadItemEvent extends ItemEvent{}
 class UpdateItemEvent extends ItemEvent{}
 
 class DeleteItemEvent extends ItemEvent{}
+
+class DeleteAllItemEvent extends ItemEvent{}

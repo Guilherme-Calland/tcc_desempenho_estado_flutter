@@ -10,14 +10,18 @@ class LoadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () => bloc.add(ReadItemEvent()),
+      onTap: () {
+        Desempenho.reset();
+        bloc.add(ReadItemEvent());
+      },
       onLongPress: ()async{
+        Desempenho.reset();
         int i = 0;
-        Desempenho.listaDesempenhos.clear();
         do{
           i++;
           bloc.add(ReadItemEvent());
-        }while(i > 100);
+          await Desempenho.wait();
+        }while(i < Desempenho.repeticoes);
         await Desempenho.mostrarMediaDesempenho();
       },
       color: readColor,

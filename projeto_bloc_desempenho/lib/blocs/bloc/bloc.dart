@@ -15,6 +15,7 @@ class ItemBloc extends Bloc<ItemEvent, ItemState>{
     on<ReadItemEvent>((event, emit) => emit(ItemSuccessState(recipeList: _readItems())));
     on<UpdateItemEvent>((event, emit) => emit(ItemSuccessState(recipeList: _updateItem())));
     on<DeleteItemEvent>((event, emit) => emit(ItemSuccessState(recipeList: _deleteItem())));
+    on<DeleteAllItemEvent>((event, emit) => emit(ItemSuccessState(recipeList: _deleteAllItems())));
   }
   
   _createItem(Recipe item) {
@@ -53,6 +54,11 @@ class ItemBloc extends Bloc<ItemEvent, ItemState>{
       _recipeList.removeLast();
     }
     Desempenho.salvarTempo('desempenho excluíndo');
+    return _recipeList;
+  }
+
+  _deleteAllItems(){
+    _recipeList.clear();
     return _recipeList;
   }
 }
