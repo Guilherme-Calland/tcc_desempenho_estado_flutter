@@ -14,12 +14,13 @@ class CreateBtn extends StatelessWidget {
   Widget build(BuildContext context) {
     return MyButton(
       onTap: () async{
+        Desempenho.reset();
         int index = Random().nextInt(Dados.recipes.length);
         Recipe estado = Recipe.fromJson(Dados.recipes[index]);
         myStore.createItem(estado);
       },
       onLongPress: ()async{
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         int i = 0;
         do{
           i++;
@@ -27,7 +28,7 @@ class CreateBtn extends StatelessWidget {
           Recipe estado = Recipe.fromJson(Dados.recipes[index]);
           myStore.createItem(estado);
           await Desempenho.wait();
-        }while(i < 100);
+        }while(i < Desempenho.repeticoes);
         await Desempenho.mostrarMediaDesempenho();
       },
       color: createColor,

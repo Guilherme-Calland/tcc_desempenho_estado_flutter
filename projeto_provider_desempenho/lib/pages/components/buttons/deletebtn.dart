@@ -12,10 +12,13 @@ class DeleteBtn extends StatelessWidget {
     ItemController itemProvider = ItemController.getProvider(context);
 
     return MyButton(
-      onTap: () => itemProvider.deleteItem(),
+      onTap: (){
+        Desempenho.reset();
+        itemProvider.deleteItem();
+      },
       onLongPress: ()async{
         bool finished = false;
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         do{
           itemProvider.deleteItem();
           await Desempenho.wait();

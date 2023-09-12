@@ -9,7 +9,10 @@ class LoadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () => myStore.readItems(),
+      onTap: (){
+        Desempenho.reset();
+        myStore.readItems();
+      },
       onLongPress: ()async{
         bool finished = false;
         Desempenho.listaDesempenhos.clear();

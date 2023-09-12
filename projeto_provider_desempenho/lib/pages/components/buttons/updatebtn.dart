@@ -14,10 +14,11 @@ class UpdateBtn extends StatelessWidget {
 
     return MyButton(
       onTap: (){
+        Desempenho.reset();
         itemProvider.updateItem();
       },
       onLongPress: ()async{
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         do{
           await Desempenho.wait();
           itemProvider.updateItem();

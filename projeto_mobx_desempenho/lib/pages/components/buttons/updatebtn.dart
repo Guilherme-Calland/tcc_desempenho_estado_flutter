@@ -10,9 +10,12 @@ class UpdateBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () => myStore.updateItem(),
+      onTap: (){
+        Desempenho.reset();
+        myStore.updateItem();
+      },
       onLongPress: ()async{
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         do{
           await Desempenho.wait();
           myStore.updateItem();

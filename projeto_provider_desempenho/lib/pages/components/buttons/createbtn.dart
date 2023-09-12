@@ -13,11 +13,12 @@ class CreateBtn extends StatelessWidget {
 
     return MyButton(
       onTap: () async{
+        Desempenho.reset();
         itemProvider.createItem();
       },
       onLongPress: ()async{
+        Desempenho.reset();
         bool finished = false;
-        Desempenho.listaDesempenhos.clear();
         do{
           itemProvider.createItem();
           await Desempenho.wait();

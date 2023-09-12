@@ -20,14 +20,29 @@ class Desempenho{
       int tempoAgora = int.parse(nowTxt);
       int desempenho = tempoAgora - tempoSalvo;
       if(desempenho > 0){
-        debugPrint('${listaDesempenhos.length} -> $rotuloSalvo: $desempenho milissegundos');
+        debugPrint('${listaDesempenhos.length} -> $rotuloSalvo: $desempenho microssegundos');
         listaDesempenhos.add(desempenho);
       }
     }
   }
 
-  static String _medidaTempo(DateTime now) => '${now.millisecond}';
-  
+  static void reset(){
+    tempoSalvo = 0;
+    rotuloSalvo = '';
+    listaDesempenhos.clear();
+  }
+
+  static String _medidaTempo(DateTime now){
+    String timeInMilliseconds = '${now.millisecond}';
+    String timeInMicroseconds = '${now.microsecond}';
+    while(_notInCorrectFormat(timeInMicroseconds)){
+      timeInMicroseconds = '0$timeInMicroseconds';
+    }
+    return '$timeInMilliseconds$timeInMicroseconds';
+  }
+
+  static bool _notInCorrectFormat(String timeInMicroseconds) => timeInMicroseconds.length < 3;
+
   static int media(List<int> listaDesempenhos) {
     int soma = 0;
     listaDesempenhos.forEach((e){
@@ -44,6 +59,6 @@ class Desempenho{
     debugPrint('aguarde...');
     await wait(milliseconds: 500);
     int mediaDesempenho = media(Desempenho.listaDesempenhos);
-    debugPrint('média $rotuloSalvo: $mediaDesempenho milissegundos');
+    debugPrint('média $rotuloSalvo: $mediaDesempenho microssegundos');
   }
 }
