@@ -4,7 +4,7 @@ class Desempenho{
   static int tempoSalvo = 0;
   static String rotuloSalvo = '';
   static List<int> listaDesempenhos = [];
-  static int repeticoes = 100;
+  static int repeticoes = 1000;
 
   static void salvarTempo(String rotulo){
     rotuloSalvo = rotulo;

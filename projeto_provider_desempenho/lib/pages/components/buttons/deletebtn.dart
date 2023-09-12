@@ -17,7 +17,7 @@ class DeleteBtn extends StatelessWidget {
         itemProvider.deleteItem();
       },
       onDoubleTap: (){
-        itemProvider.recipeList.clear();
+        itemProvider.clearList();
       },
       onLongPress: ()async{
         bool finished = false;

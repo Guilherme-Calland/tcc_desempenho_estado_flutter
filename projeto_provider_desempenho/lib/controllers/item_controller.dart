@@ -53,4 +53,9 @@ class ItemController extends ChangeNotifier{
 
   int randomize(int num) => Random().nextInt(num);
 
+  void clearList() {
+    recipeList.clear();
+    notifyListeners();
+  }
+
 }
