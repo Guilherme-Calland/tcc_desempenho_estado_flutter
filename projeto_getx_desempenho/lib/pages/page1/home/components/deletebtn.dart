@@ -14,10 +14,17 @@ class DeleteButton extends StatelessWidget {
     final recipeController = Get.find<RecipeController>();
 
     return MyButton(
-      onTap: () => recipeController.deleteItem(),
+      onDoubleTap: (){
+        recipeController.recipeList.clear();
+      },
+      onTap: (){
+        Desempenho.reset();
+        recipeController.deleteItem();
+      },
+      
       onLongPress: ()async{
         bool finished = false;
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         do{
           recipeController.deleteItem();
           await Desempenho.wait();

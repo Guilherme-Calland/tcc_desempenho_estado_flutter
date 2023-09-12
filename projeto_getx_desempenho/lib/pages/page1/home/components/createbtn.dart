@@ -14,11 +14,12 @@ class CreateButton extends StatelessWidget {
 
     return MyButton(
       onTap: () async{
+        Desempenho.reset();
         recipeController.createItem();
       },
       onLongPress: ()async{
         bool finished = false;
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         do{
           recipeController.createItem();
           await Desempenho.wait();

@@ -14,11 +14,12 @@ class ReadButton extends StatelessWidget {
 
     return MyButton(
       onTap: () async{
+        Desempenho.reset();
         recipeController.readItems();
       },
       onLongPress: ()async{
         bool finished = false;
-        Desempenho.listaDesempenhos.clear();
+        Desempenho.reset();
         do{
           recipeController.readItems();
           await Desempenho.wait();
