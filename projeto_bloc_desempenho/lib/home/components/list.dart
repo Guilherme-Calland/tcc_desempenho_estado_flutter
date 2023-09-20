@@ -9,6 +9,9 @@ import '../../blocs/bloc/state.dart';
 import '../../main.dart';
 
 class ItemList extends StatelessWidget {
+
+  const ItemList();
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ItemBloc, ItemState>(

@@ -7,6 +7,8 @@ import '../../../widgets/my_btn.dart';
 
 class UpdateButton extends StatelessWidget {
 
+  const UpdateButton();
+
   @override
   Widget build(BuildContext context) {
     return MyButton(

@@ -9,6 +9,8 @@ import '../../widgets/recipe_card/item_card.dart';
 
 class ItemList extends StatelessWidget {
 
+  const ItemList();
+
   @override
   Widget build(BuildContext context) {
     final recipeController = Get.find<RecipeController>();

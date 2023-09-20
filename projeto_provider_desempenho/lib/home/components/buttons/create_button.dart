@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:projeto_getx_desempenho/controllers/item_controller.dart';
-import 'package:projeto_getx_desempenho/styles.dart';
-import 'package:projeto_getx_desempenho/utils/performance.dart';
-import 'package:projeto_getx_desempenho/widgets/my_btn.dart';
+import 'package:provider/provider.dart';
+import '../../../controllers/item_controller.dart';
+import '../../../styles.dart';
+import '../../../utils/performance.dart';
+import '../../../widgets/my_btn.dart';
 
 class CreateButton extends StatelessWidget {
 
@@ -11,18 +11,18 @@ class CreateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final recipeController = Get.find<RecipeController>();
+    ItemController itemProvider = ItemController.getProvider(context);
 
     return MyButton(
       onTap: () async{
         Desempenho.reset();
-        recipeController.createItem();
+        itemProvider.createItem();
       },
       onLongPress: ()async{
-        bool finished = false;
         Desempenho.reset();
+        bool finished = false;
         do{
-          recipeController.createItem();
+          itemProvider.createItem();
           await Desempenho.wait();
           if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
             finished = true;

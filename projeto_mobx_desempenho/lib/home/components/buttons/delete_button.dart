@@ -6,6 +6,8 @@ import '../../../widgets/my_btn.dart';
 
 class DeleteButton extends StatelessWidget {
 
+  const DeleteButton();
+
   @override
   Widget build(BuildContext context) {
     return MyButton(

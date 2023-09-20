@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../styles.dart';
 import 'buttons/create_button.dart';
-import 'deletebtn.dart';
-import 'loadbtn.dart';
-import 'updatebtn.dart';
+import 'buttons/delete_button.dart';
+import 'buttons/read_button.dart';
+import 'buttons/update_button.dart';
 import 'list.dart';
 
 class ScreenScaffold extends StatelessWidget {

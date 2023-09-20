@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_bloc_desempenho/blocs/bloc/event.dart';
-import 'package:projeto_bloc_desempenho/data/dados.dart';
-import '../../../main.dart';
+import '../../../controllers/item_controller.dart';
 import '../../../styles.dart';
 import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
@@ -12,24 +10,26 @@ class DeleteButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ItemController itemProvider = ItemController.getProvider(context);
+
     return MyButton(
       onTap: (){
         Desempenho.reset();
-        bloc.add(DeleteItemEvent());
+        itemProvider.deleteItem();
       },
       onDoubleTap: (){
-        bloc.add(DeleteAllItemEvent());
-      }
-      ,
+        itemProvider.clearList();
+      },
       onLongPress: ()async{
+        bool finished = false;
         Desempenho.reset();
-        int i = 0;
         do{
-          i++;
-          bloc.add(DeleteItemEvent());
+          itemProvider.deleteItem();
           await Desempenho.wait();
-        }while(i < Desempenho.repeticoes);
-        
+          if(itemProvider.recipeList.isEmpty){
+            finished = true;
+          }
+        }while(!finished);
         await Desempenho.mostrarMediaDesempenho();
       },
       icon: Icons.delete,

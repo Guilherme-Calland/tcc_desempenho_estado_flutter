@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_mobx_desempenho/styles.dart';
-
+import 'package:projeto_provider_desempenho/styles.dart';
 import 'buttons/create_button.dart';
 import 'buttons/delete_button.dart';
 import 'buttons/read_button.dart';
@@ -8,7 +7,6 @@ import 'buttons/update_button.dart';
 import 'list.dart';
 
 class ScreenScaffold extends StatelessWidget {
-
   final ItemList itemList;
   final CreateButton createButton;
   final ReadButton readButton;

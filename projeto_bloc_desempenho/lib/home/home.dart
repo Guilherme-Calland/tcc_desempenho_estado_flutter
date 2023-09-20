@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenScaffold(
+    return const ScreenScaffold(
       itemList: ItemList(),
       createButton: CreateButton(),
       readButton: ReadButton(),
