@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:projeto_bloc_desempenho/model/recipe.dart';
 import 'package:projeto_bloc_desempenho/utils/performance.dart';
 import 'package:projeto_bloc_desempenho/widgets/recipe_card/item_card.dart';
-import '../../../blocs/bloc/bloc.dart';
-import '../../../blocs/bloc/state.dart';
-import '../../../main.dart';
+import '../../blocs/bloc/bloc.dart';
+import '../../blocs/bloc/state.dart';
+import '../../main.dart';
 
 class ItemList extends StatelessWidget {
   @override

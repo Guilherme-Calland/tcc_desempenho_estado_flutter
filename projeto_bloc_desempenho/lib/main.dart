@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_bloc_desempenho/pages/home/home.dart';
+import 'package:projeto_bloc_desempenho/home/home.dart';
 
 import 'blocs/bloc/bloc.dart';
 

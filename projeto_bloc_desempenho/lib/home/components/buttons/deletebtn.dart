@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_bloc_desempenho/blocs/bloc/event.dart';
 import 'package:projeto_bloc_desempenho/data/dados.dart';
-import '../../../../main.dart';
-import '../../../../styles.dart';
-import '../../../../utils/performance.dart';
-import '../../../../widgets/my_btn.dart';
+import '../../../main.dart';
+import '../../../styles.dart';
+import '../../../utils/performance.dart';
+import '../../../widgets/my_btn.dart';
 
 class DeleteBtn extends StatelessWidget {
 
