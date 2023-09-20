@@ -1,38 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:projeto_getx_desempenho/controllers/item_controller.dart';
+import 'package:projeto_getx_desempenho/styles.dart';
 import 'package:projeto_getx_desempenho/utils/performance.dart';
+import 'package:projeto_getx_desempenho/widgets/my_btn.dart';
 
-import '../../controllers/item_controller.dart';
-import '../../styles.dart';
-import '../../widgets/my_btn.dart';
 
-class CreateButton extends StatelessWidget {
+class DeleteButton extends StatelessWidget {
+
 
   @override
   Widget build(BuildContext context) {
     final recipeController = Get.find<RecipeController>();
 
     return MyButton(
-      onTap: () async{
-        Desempenho.reset();
-        recipeController.createItem();
+      onDoubleTap: (){
+        recipeController.recipeList.clear();
       },
+      onTap: (){
+        Desempenho.reset();
+        recipeController.deleteItem();
+      },
+      
       onLongPress: ()async{
         bool finished = false;
         Desempenho.reset();
         do{
-          recipeController.createItem();
+          recipeController.deleteItem();
           await Desempenho.wait();
-          if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
+          if(recipeController.recipeList.isEmpty){
             finished = true;
           }
         }while(!finished);
         await Desempenho.mostrarMediaDesempenho();
       },
-      color: createColor,
-      icon: Icons.add,
+      icon: Icons.delete,
+      color: deleteColor,
     );
   }
 }
-
-

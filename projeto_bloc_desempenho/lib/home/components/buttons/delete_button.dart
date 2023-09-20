@@ -1,40 +1,37 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:projeto_bloc_desempenho/blocs/bloc/event.dart';
-import '../../../data/dados.dart';
+import 'package:projeto_bloc_desempenho/data/dados.dart';
 import '../../../main.dart';
-import '../../../model/recipe.dart';
 import '../../../styles.dart';
 import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
 
-class CreateBtn extends StatelessWidget {
+class DeleteButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () async{
+      onTap: (){
         Desempenho.reset();
-        int index = Random().nextInt(Dados.recipes.length);
-        Recipe recipe = Recipe.fromJson(Dados.recipes[index]);
-        bloc.add(CreateItemEvent(recipe: recipe));
+        bloc.add(DeleteItemEvent());
       },
+      onDoubleTap: (){
+        bloc.add(DeleteAllItemEvent());
+      }
+      ,
       onLongPress: ()async{
         Desempenho.reset();
         int i = 0;
         do{
           i++;
-          int index = Random().nextInt(Dados.recipes.length);
-          Recipe recipe = Recipe.fromJson(Dados.recipes[index]);
-          bloc.add(CreateItemEvent(recipe: recipe));
+          bloc.add(DeleteItemEvent());
           await Desempenho.wait();
         }while(i < Desempenho.repeticoes);
+        
         await Desempenho.mostrarMediaDesempenho();
       },
-      color: createColor,
-      icon: Icons.add,
+      icon: Icons.delete,
+      color: deleteColor,
     );
   }
 }
-
-
