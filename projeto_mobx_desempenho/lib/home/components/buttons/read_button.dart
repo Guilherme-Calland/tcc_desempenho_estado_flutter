@@ -4,30 +4,31 @@ import '../../../styles.dart';
 import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
 
-class DeleteBtn extends StatelessWidget {
+class ReadButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return MyButton(
-      onTap: () {
+      onTap: (){
         Desempenho.reset();
-        myStore.deleteItem();
-      },
-      onDoubleTap: (){
-        myStore.recipeList.clear();
+        myStore.readItems();
       },
       onLongPress: ()async{
-        Desempenho.reset();
-        int i = 0;
+        bool finished = false;
+        Desempenho.listaDesempenhos.clear();
         do{
-          i++;
-          myStore.deleteItem();
+          myStore.readItems();
           await Desempenho.wait();
-        }while(i < Desempenho.repeticoes);
+          if(Desempenho.listaDesempenhos.length >= Desempenho.repeticoes){
+            finished = true;
+          }
+        }while(!finished);
         await Desempenho.mostrarMediaDesempenho();
       },
-      icon: Icons.delete,
-      color: deleteColor,
+      color: readColor,
+      icon: Icons.list,
     );
   }
 }
+
+

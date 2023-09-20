@@ -8,7 +8,7 @@ import '../../../styles.dart';
 import '../../../utils/performance.dart';
 import '../../../widgets/my_btn.dart';
 
-class CreateBtn extends StatelessWidget {
+class CreateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
