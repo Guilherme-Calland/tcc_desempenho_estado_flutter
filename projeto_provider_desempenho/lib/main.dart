@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_provider_desempenho/pages/home.dart';
+import 'package:projeto_provider_desempenho/home/home.dart';
 import 'package:provider/provider.dart';
 
 import 'controllers/item_controller.dart';

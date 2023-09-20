@@ -52,7 +52,7 @@ class ScreenScaffold extends StatelessWidget {
             ),
             
             Expanded(
-              child: ItemList(),
+              child: itemList,
             ),
                   ],
                 ),
