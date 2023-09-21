@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../../../controllers/item_controller.dart';
 import '../../../styles.dart';
 import '../../../utils/performance.dart';
