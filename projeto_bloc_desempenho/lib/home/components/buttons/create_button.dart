@@ -21,6 +21,7 @@ class CreateButton extends StatelessWidget {
         Recipe recipe = Recipe.fromJson(Dados.recipes[index]);
         bloc.add(CreateItemEvent(recipe: recipe));
       },
+      // segura o botao para executar 1000x
       onLongPress: ()async{
         Desempenho.reset();
         int i = 0;

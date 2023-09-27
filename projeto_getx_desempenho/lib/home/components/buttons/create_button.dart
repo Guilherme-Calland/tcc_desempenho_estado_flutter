@@ -18,6 +18,7 @@ class CreateButton extends StatelessWidget {
         Desempenho.reset();
         recipeController.createItem();
       },
+      // segura o botao para executar 1000x
       onLongPress: ()async{
         bool finished = false;
         Desempenho.reset();
